@@ -28,10 +28,14 @@ if __name__ == "__main__":
   measurement_rate = 2000
   N = 500
 
+  print("Hola")
+
   H = hitting_time.giveMeHamiltonian(gspace, gamma).toarray()
+  
   start = time.time()
   T = hitting_time.estimateTransitionMatrix(H, measurement_rate, 1)
   end = time.time()
   print(end-start)
+
   hitting_times = hitting_time.computeHittingTimes(T, F)
 
