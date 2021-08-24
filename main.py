@@ -11,7 +11,7 @@ def read_phenotypes(gspace_name):
   return phenotypes
 
 if __name__ == "__main__":
-  gspace_name = "four_phen"
+  gspace_name = "musculus"
 
   gspace = nx.read_gml(gspace_name+".gml", label='id')
   phenotypes = read_phenotypes(gspace_name)
