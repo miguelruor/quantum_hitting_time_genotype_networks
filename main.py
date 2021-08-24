@@ -1,6 +1,7 @@
 import hitting_time
 import networkx as nx
 import json
+import time
 
 def read_phenotypes(gspace_name):
   phenotypes_file = open("/data/phenotypes_"+gspace_name+".txt", "r")
@@ -28,6 +29,9 @@ if __name__ == "__main__":
   N = 500
 
   H = hitting_time.giveMeHamiltonian(gspace, gamma).toarray()
-  T = hitting_time.estimateTransitionMatrix(H, measurement_rate, N)
+  start = time.time()
+  T = hitting_time.estimateTransitionMatrix(H, measurement_rate, 1)
+  end = time.time()
+  print(end-start)
   hitting_times = hitting_time.computeHittingTimes(T, F)
 
